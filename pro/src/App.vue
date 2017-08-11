@@ -1,0 +1,33 @@
+<template>
+  <div id="app">
+    <img src="./assets/logo.png">
+    <transition name="slide-fade">
+      <router-view></router-view>
+    </transition>
+  </div>
+</template>
+
+<script>
+  export default {
+    data () {
+      return {
+        msg: 'Hello Vue!'
+      }
+    }
+  }
+
+</script>
+
+<style>
+  .slide-fade-enter-active {
+    transition: all 3s;
+  }
+  .slide-fade-leave-active {
+    transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  }
+  .slide-fade-enter, .slide-fade-leave-active {
+    transform: translateX(-430px);
+    opacity:0;
+  }
+
+</style>
