@@ -41,5 +41,6 @@ export default new Router({
       ]
     },
     {name: 'BookDetail', path: '/books/:id', component: BookDetail}
-  ]
+  ],
+  linkActiveClass: 'active'
 })

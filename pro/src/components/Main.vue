@@ -34,12 +34,17 @@
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    margin-top: 60px;
+    height:100%;
+  }
+  #Main{
+    height: 100%;
+    overflow: scroll;
   }
   .tabs{
     position: fixed;
     bottom:0;
     width:100%;
+    background-color: white;
   }
   .ul1{
     overflow: hidden;
@@ -50,5 +55,7 @@
     width:25%;
     float: left;
   }
-
+  .active{
+    color: red;
+  }
 </style>
