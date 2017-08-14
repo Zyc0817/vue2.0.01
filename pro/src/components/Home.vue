@@ -10,17 +10,25 @@
     <BookList :books="books"
               @onBookSelect="preview($event)">
     </BookList>
-    <BookList :books="articles"></BookList>
+    <!--<BookList :books="articles"></BookList>-->
+    <ModalDialog ref="dialog" @dialogClose="selected=undefined">
+      <div slot="header">
+        <div class="dismiss" @click.prevent="$refs.dialog.close()">aa</div>
+      </div>
+      <div>{{selected}}</div>
+    </ModalDialog>
   </div>
 </template>
 <script>
   import BookList from './BookList.vue'
+  import ModalDialog from './dialog.vue'
   export default {
     data () {
       return {
         msg: 'zyc',
         articles: [],
-        books: ['1', '2', '3']
+        books: ['1', '2', '3'],
+        selected: 'undefinded'
       }
     },
     mounted: function () {
@@ -37,11 +45,13 @@
       })
     },
     components: {
-      BookList
+      BookList,
+      ModalDialog
     },
     methods: {
       preview (book) {
-        alert(book)
+        this.selected = book
+        this.$refs.dialog.open()
       }
     }
   }
