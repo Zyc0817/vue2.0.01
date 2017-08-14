@@ -1,5 +1,7 @@
 <template>
-  <div>{{books}}</div>
+  <ul>
+    <li v-for="item in books" @click="$emit('onBookSelect', item)">{{item}}</li>
+  </ul>
 </template>
 <script>
   export default {

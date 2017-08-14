@@ -7,6 +7,9 @@
     <router-link :to="{ path: '/me'}" append>
       <button>返回</button>
     </router-link>
+    <BookList :books="books"
+              @onBookSelect="preview($event)">
+    </BookList>
     <BookList :books="articles"></BookList>
   </div>
 </template>
@@ -16,7 +19,8 @@
     data () {
       return {
         msg: 'zyc',
-        articles: []
+        articles: [],
+        books: ['1', '2', '3']
       }
     },
     mounted: function () {
@@ -34,6 +38,11 @@
     },
     components: {
       BookList
+    },
+    methods: {
+      preview (book) {
+        alert(book)
+      }
     }
   }
 </script>
