@@ -1,7 +1,7 @@
 <template>
-  <div id="Explorer">
-    <div v-text="bookID"></div>
-  </div>
+    <div id="Explorer">
+      <div v-text="bookID"></div>
+    </div>
 </template>
 <script>
   export default {
